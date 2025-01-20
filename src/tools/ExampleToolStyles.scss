@@ -1,0 +1,71 @@
+@import '../styles/_theme.scss';
+@import '../styles/_spacing.scss';
+
+.example-tool-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: lighten($color-accent, 40%);
+  border: 1px solid rgba($color-text, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba($color-text, 0.05);
+
+  .example-tool-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .back-button {
+    @extend .btn-outline;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .tool-title {
+    @extend .heading-lg;
+    margin-bottom: 0.5rem;
+    color: $color-primary;
+  }
+
+  .tool-description {
+    @extend .body-text;
+    margin-bottom: 1.5rem;
+  }
+
+  .tool-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .tool-input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .tool-result {
+    background-color: rgba($color-primary, 0.05);
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+
+    h4 {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.dark-mode .example-tool-container {
+  background-color: #2a2a2a;
+  border: 1px solid rgba($color-text-dark, 0.4);
+
+  .tool-result {
+    background-color: rgba($color-primary, 0.1);
+  }
+}

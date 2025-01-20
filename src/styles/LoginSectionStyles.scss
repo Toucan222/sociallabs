@@ -1,0 +1,19 @@
+@import './_theme.scss';
+
+.login-section {
+  padding: 2rem 1rem;
+  background-color: lighten($color-bg, 5%);
+  border-top: 1px solid rgba($color-text, 0.1);
+
+  .login-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: $color-primary;
+  }
+}
+
+.dark-mode .login-section {
+  background-color: darken($color-bg-dark, 5%);
+  border-top: 1px solid rgba($color-text-dark, 0.2);
+}

@@ -1,0 +1,33 @@
+@import '../styles/_theme.scss';
+@import '../styles/_spacing.scss';
+
+.search-tools-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+
+  .search-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.dark-mode .search-input {
+  background-color: #333;
+  color: $color-text-dark;
+  border: 1px solid rgba($color-text-dark, 0.5);
+}

@@ -1,0 +1,77 @@
+@import '../styles/_theme.scss';
+
+.hero-container {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: $color-text;
+  background: linear-gradient(
+    135deg,
+    lighten($color-accent, 15%),
+    lighten($color-primary, 10%)
+  );
+  margin-top: 2rem;
+  animation: fadeInHero 0.7s ease forwards;
+  opacity: 0;
+
+  &.mounted {
+    opacity: 1;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $color-primary;
+  }
+
+  .hero-bullets {
+    list-style: none;
+    margin-bottom: 1rem;
+
+    li {
+      margin: 0.5rem 0;
+      font-weight: 500;
+      &::before {
+        content: '• ';
+        color: $color-accent;
+      }
+    }
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .hero-cta {
+    @extend .btn;
+  }
+}
+
+@keyframes fadeInHero {
+  to {
+    opacity: 1;
+  }
+}
+
+.dark-mode .hero-container {
+  background: linear-gradient(
+    135deg,
+    darken($color-accent, 20%),
+    darken($color-primary, 20%)
+  );
+  color: $color-text-dark;
+
+  .hero-title {
+    color: $color-text-dark;
+  }
+}

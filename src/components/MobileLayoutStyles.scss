@@ -1,0 +1,86 @@
+@import '../styles/_theme.scss';
+@import '../styles/_spacing.scss';
+
+.mobile-layout-container {
+  width: 100%;
+  min-height: calc(100vh - 60px); /* Account for NavBar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent bounce on iOS */
+  position: relative;
+}
+
+.card-wrapper {
+  width: 100%;
+  max-width: 340px;
+  min-height: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y pinch-zoom;
+  position: relative;
+  
+  .cool-card {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    transform: none !important; /* Prevent card animation conflicts */
+  }
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 340px;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+
+  .page-indicator {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $color-text;
+    opacity: 0.8;
+    user-select: none;
+  }
+
+  .btn {
+    min-width: 100px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+/* Dark mode adjustments */
+.dark-mode {
+  .page-indicator {
+    color: $color-text-dark;
+  }
+  
+  .controls-row .btn {
+    border-color: rgba($color-text-dark, 0.3);
+    
+    &:hover {
+      background-color: rgba($color-text-dark, 0.1);
+    }
+  }
+}
+
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .mobile-layout-container {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+}
